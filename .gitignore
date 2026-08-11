@@ -1,0 +1,15 @@
+# Python 缓存
+__pycache__/
+*.pyc
+
+# 内部工作目录（PDF 文本提取、参考仓库克隆等）
+_scratch/
+
+# 版权材料：命题人讲评 PDF（期刊文章），不随仓库分发
+板凳龙运动轨迹模型的分析研究_蔡志杰.pdf
+
+# 操作系统/编辑器
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
