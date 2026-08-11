@@ -1,13 +1,15 @@
-# math test 4
+# math test 5
 
-同原句：记 $u_i=\mathrm{d}s_i/\mathrm{d}t$ 为速率， $\boldsymbol{\tau}_i$ 为切向量，约束 $|P_{i+1}-P_i|=l_i$ 成立
+A：$u_i=1$ 与 $P_0$ 同在一行
 
-单独一行：
+B：$u_i=1$ 与 $\tau_i$ 同在一行
 
-$\boldsymbol{\tau}_i$
+C：$u_i=\mathrm{d}s_i/\mathrm{d}t$ 与 $P_0$ 同在一行
 
-再单独一行：
+D：$P_0$ 与 $u_i=1$ 同在一行
 
-$|P_{i+1}-P_i|=l_i$
+E：$a$ 与 $P_0$ 同在一行
 
-反引号：$`\boldsymbol{\tau}_i`$ 与 $`|P_{i+1}-P_i|=l_i`$
+F：$u_i$ 与 $P_0$ 同在一行
+
+G：$u_i=1$ 与 $|P_{i+1}-P_i|=l_i$ 同在一行
