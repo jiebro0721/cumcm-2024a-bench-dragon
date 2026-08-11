@@ -48,6 +48,8 @@ $$
 
 ## 3 基础模型
 
+> 本文公式按出现顺序编号；标注“讲评式 (N)”者，指命题人论文《板凳龙运动轨迹模型的分析研究》中的公式编号。
+
 ### 3.1 盘入螺线与龙头运动模型（常微分方程模型）
 
 等距螺线（阿基米德螺线）的极坐标方程为
@@ -95,14 +97,14 @@ $$
 $$
 s=\int_{\theta_2}^{\theta_1}\sqrt{\rho^2+\left(\frac{\mathrm{d}\rho}{\mathrm{d}\theta}\right)^2}\,\mathrm{d}\theta
 =\frac{a}{4\pi}\left[G(\theta)\right]_{\theta_2}^{\theta_1},
-\qquad(52)
+\qquad(6)
 $$
 
 于是
 
 $$
 v_0t=\frac{a}{4\pi}\left[G(\theta_0(0))-G(\theta_0(t))\right],
-\qquad(53)
+\qquad(7)
 $$
 
 与式 (5) 一致。对给定时刻 $t$，用单调函数求根即可得到 $\theta_0(t)$，再代入式 (2) 得龙头位置。
@@ -115,10 +117,10 @@ $$
 l_i^2=\rho_i^2+\rho_{i+1}^2-2\rho_i\rho_{i+1}\cos(\theta_{i+1}-\theta_i)
 =\frac{a^2}{4\pi^2}\left[\theta_i^2+\theta_{i+1}^2
 -2\theta_i\theta_{i+1}\cos(\theta_{i+1}-\theta_i)\right].
-\qquad(6)
+\qquad(8)
 $$
 
-对盘入螺线，后一个把手在龙头后方（ $\theta_{i+1}>\theta_i$），故在区间 $(\theta_i,\ \theta_i+2\pi)$ 内求式 (6) 的唯一根即得 $\theta_{i+1}$；依次递推可得 $P_1,\dots,P_{223}$。若区间内无解，说明板凳无法在该位置容纳，视为不可行（碰撞）。此递推即讲评第 6 节“情形 1～4”的统一弧长参数化实现：把整条路径（盘入螺线＋圆弧＋盘出螺线）参数化为弧长 $s$，后把手为沿路径向后第一个满足弦长等于 $l_i$ 的点。
+对盘入螺线，后一个把手在龙头后方（ $\theta_{i+1}>\theta_i$），故在区间 $(\theta_i,\ \theta_i+2\pi)$ 内求式 (8) 的唯一根即得 $\theta_{i+1}$；依次递推可得 $P_1,\dots,P_{223}$。若区间内无解，说明板凳无法在该位置容纳，视为不可行（碰撞）。此递推即讲评第 6 节“情形 1～4”的统一弧长参数化实现：把整条路径（盘入螺线＋圆弧＋盘出螺线）参数化为弧长 $s$，后把手为沿路径向后第一个满足弦长等于 $l_i$ 的点。
 
 ### 3.3 速度递推模型
 
@@ -135,7 +137,7 @@ $$
 u_{i+1}=\frac{(P_{i+1}-P_i)\cdot\boldsymbol{\tau}_i}
 {(P_{i+1}-P_i)\cdot\boldsymbol{\tau}_{i+1}}\,u_i,
 \qquad |\boldsymbol{v}_i|=|u_i|.
-\qquad(7)
+\qquad(9)
 $$
 
 对纯螺线情形，上式与讲评式 (7)～(9) 等价：
@@ -146,7 +148,7 @@ $$
 {\theta_{i+1}-\theta_i\cos\Delta+\theta_i\theta_{i+1}\sin\Delta}
 \frac{\mathrm{d}\theta_i}{\mathrm{d}t},
 \qquad \Delta=\theta_{i+1}-\theta_i,
-\qquad(8)
+\qquad(10)
 $$
 
 $$
@@ -154,7 +156,7 @@ $$
 =\left|\frac{\theta_{i+1}\cos\Delta-\theta_i+\theta_i\theta_{i+1}\sin\Delta}
 {\theta_{i+1}-\theta_i\cos\Delta+\theta_i\theta_{i+1}\sin\Delta}\right|
 \sqrt{\frac{1+\theta_{i+1}^2}{1+\theta_i^2}}\,|\boldsymbol{v}_i|.
-\qquad(9)
+\qquad(11)
 $$
 
 ### 3.4 板凳矩形与碰撞判别模型
@@ -168,7 +170,7 @@ R_i&=P_i+\frac{l_i+d_i}{l_i}(P_{i+1}-P_i)-\frac{\omega_i}{l_i}\mathbf{R}(P_{i+1}
 S_i&=P_i-\frac{d_i}{l_i}(P_{i+1}-P_i)-\frac{\omega_i}{l_i}\mathbf{R}(P_{i+1}-P_i),\\
 T_i&=P_i-\frac{d_i}{l_i}(P_{i+1}-P_i)+\frac{\omega_i}{l_i}\mathbf{R}(P_{i+1}-P_i),
 \end{aligned}
-\qquad(10)
+\qquad(12)
 $$
 
 其中 $\mathbf{R}(x,y)=(y,-x)$ 表示逆时针旋转 $90^\circ$， $d_i=0.275$ m， $\omega_i=0.15$ m。
@@ -178,7 +180,7 @@ $$
 $$
 t=\frac{p_j(y_C-y_A)-q_j(x_C-x_A)}{\Delta},\qquad
 s=\frac{p_i(y_C-y_A)-q_i(x_C-x_A)}{\Delta},
-\qquad(11)
+\qquad(13)
 $$
 
 若 $0\le s,t\le 1$ 则两线段相交； $\Delta=0$ 时再按平行/共线情形判断（讲评式 (18)～(27)）。任意一条边相交即判定两板凳碰撞。
@@ -245,11 +247,11 @@ $$
 
 1. **找首次碰撞窗口**：从初始极角 $32\pi$ 向内粗扫（步长 0.2 rad），在 $27\sim25$ rad 区间加密到 0.02 rad，得到第一个出现碰撞的窗口；
 2. **窗口边界二分**：在窗口边界两侧（一侧碰撞、一侧不碰撞）二分 60 次，取“仍不碰撞”一侧为终止极角 $\theta_0(T)$；
-3. 由式 (53) 计算终止时刻
+3. 由式 (14) 计算终止时刻
 
 $$
 T=\frac{a}{4\pi v_0}\left[G(\theta_0(0))-G(\theta_0(T))\right].
-\qquad(12)
+\qquad(14)
 $$
 
 ![问题2：碰撞窗口](figures/q2_collision_windows.png)
@@ -295,21 +297,21 @@ $$
 
 $$
 \theta_1=\frac{2\pi r}{a}.
-\qquad(13)
+\qquad(15)
 $$
 
 要求龙头前把手能沿螺线从初始位置（ $32\pi$）盘入到 $\theta_1$，**整个过程中**任意两条不相邻板凳均不碰撞，即
 
 $$
 \text{碰撞}(\theta_0)=0,\qquad \forall\,\theta_0\in[\theta_1,\ 32\pi].
-\qquad(14)
+\qquad(16)
 $$
 
 螺距越小，相邻圈之间越挤、越易碰撞，故**最小螺距问题**为
 
 $$
-a_{\min}=\min\bigl\lbrace a>0:\ \text{式 (14) 成立}\bigr\rbrace.
-\qquad(15)
+a_{\min}=\min\bigl\lbrace a>0:\ \text{式 (16) 成立}\bigr\rbrace.
+\qquad(17)
 $$
 
 求解采用二分法：对候选 $a$，从 $\theta_0=32\pi$ 向 $\theta_1$ 扫描（外层步长 0.5 rad， $\theta_1$ 附近加密到 0.02 rad），任一配置发生碰撞即不可行。数值实验表明，临界螺距附近的碰撞窗口很窄（约 0.1 rad），因此必须在 $\theta_1$ 附近精细扫描。
@@ -338,22 +340,15 @@ $$
 
 $$
 \rho=\frac{a}{2\pi}(\theta+\pi).
-\qquad(16)
+\qquad(18)
 $$
 
-盘入螺线与调头空间（半径 $r=4.5$ m）交于点 $P_1$，其极角为
-
-$$
-\theta_1=\frac{2\pi r}{a},
-\qquad(17)
-$$
-
-该点处的单位法向量为
+盘入螺线与调头空间（半径 $r=4.5$ m）交于点 $P_1$，其极角为 $\theta_1=2\pi r/a$（同式 (15)）。该点处的单位法向量为
 
 $$
 \boldsymbol{n}_1=\frac{1}{\sqrt{1+\theta_1^2}}
 \bigl(-(\sin\theta_1+\theta_1\cos\theta_1),\ \cos\theta_1-\theta_1\sin\theta_1\bigr).
-\qquad(18)
+\qquad(19)
 $$
 
 记两段圆弧圆心为 $O_1(u_1,v_1)$、 $O_2(u_2,v_2)$，半径 $r_1,r_2$，则（讲评式 (32)～(33)）
@@ -363,14 +358,14 @@ $$
 O_1&=P_1-r_1\boldsymbol{n}_1,\\
 O_2&=-P_1+r_2\boldsymbol{n}_1 .
 \end{aligned}
-\qquad(19)
+\qquad(20)
 $$
 
 两段圆弧相切（ $|O_1O_2|=r_1+r_2$），从而
 
 $$
 r_1+r_2=\frac{r\sqrt{1+\theta_1^2}}{\theta_1}.
-\qquad(20)
+\qquad(21)
 $$
 
 当第 1 段圆弧半径是第 2 段的 $k$ 倍（ $r_1=kr_2$）时，
@@ -378,19 +373,19 @@ $$
 $$
 r_1=\frac{kr\sqrt{1+\theta_1^2}}{\theta_1(k+1)},\qquad
 r_2=\frac{r\sqrt{1+\theta_1^2}}{\theta_1(k+1)}.
-\qquad(21)
+\qquad(22)
 $$
 
 设两圆弧切点为 $B$。由 $O_1P_1\parallel O_2P_2$， $\angle P_1O_1B=\angle P_2O_2B\triangleq\alpha$，调头曲线总长为
 
 $$
 L=(r_1+r_2)\alpha=\frac{r\alpha\sqrt{1+\theta_1^2}}{\theta_1}.
-\qquad(22)
+\qquad(23)
 $$
 
 **调头曲线能否缩短？——不能。** 理由如下：
 
-1. 由式 (20)， $r_1+r_2$ 只由 $r$、 $a$ 决定，与 $k$ 无关；
+1. 由式 (21)， $r_1+r_2$ 只由 $r$、 $a$ 决定，与 $k$ 无关；
 2. 对任意半径比 $k$，两段圆弧的圆心 $O_1',O_2'$ 与切点 $B'$ 满足 $O_1O_1'=O_2O_2'$，四边形 $O_1O_1'O_2'O_2$ 为平行四边形，故 $\angle P_1O_1B=\angle P_1O_1'B'$、 $\angle P_2O_2B=\angle P_2O_2'B'$，即两圆弧所张圆心角之和 $\alpha$ **也与 $k$ 无关**；
 3. 因此 $L=(r_1+r_2)\alpha$ 与 $k$ 无关，**保持相切的前提下无法通过调整两段圆弧的半径比使调头曲线变短**。
 
@@ -423,7 +418,7 @@ $$
 \frac{\mathrm{d}\theta_0}{\mathrm{d}t}=\frac{2\pi v_0}{a\sqrt{1+\theta_0^2}},
 \qquad
 G(\theta_0(t))=\frac{4\pi v_0}{a}t+G(\theta_0(0)).
-\qquad(23)
+\qquad(24)
 $$
 
 以调头开始时刻为 $t=0$： $t<0$ 龙头在盘入螺线上， $0\le t<L_1=r_1\alpha$ 在第 1 段圆弧上， $L_1\le t<L$ 在第 2 段圆弧上， $t\ge L$ 在盘出螺线上。龙身/龙尾各把手沿路径向后按“弦长递推”确定（等价于讲评式 (40)～(49) 的四种情形），速度按 3.3 节统一递推。
@@ -471,18 +466,18 @@ $$
 
 ### 8.1 模型
 
-速度递推 (7)～(9) 关于龙头速度是**齐次线性**的：龙头速度变为 $v_0$ 时，所有把手速度同步乘以 $v_0$。因此先取龙头速度 $1$ m/s，计算整个行进过程中全队最大速度 $v_{\max}^{0}$，则约束“各把手速度不超过 2 m/s”等价于
+速度递推 (9)～(11) 关于龙头速度是**齐次线性**的：龙头速度变为 $v_0$ 时，所有把手速度同步乘以 $v_0$。因此先取龙头速度 $1$ m/s，计算整个行进过程中全队最大速度 $v_{\max}^{0}$，则约束“各把手速度不超过 2 m/s”等价于
 
 $$
 \frac{v_{\max}}{1}=\frac{2}{v_{\max}^{0}},
-\qquad(24)
+\qquad(25)
 $$
 
 即
 
 $$
 v_{\max}=\frac{2}{v_{\max}^{0}}.
-\qquad(25)
+\qquad(26)
 $$
 
 ### 8.2 求解算法
@@ -490,7 +485,7 @@ $$
 1. 沿问题 4 路径，以龙头速度 1 m/s 计算 $t\in[-100,400]$ s（覆盖全队通过调头区）各时刻全部把手速度；
 2. 在峰值附近加密采样（步长 0.002 s）；
 3. 记录全队最大速度 $v_{\max}^{0}$ 及其出现的把手、时刻；
-4. 按式 (25) 计算 $v_{\max}$。
+4. 按式 (26) 计算 $v_{\max}$。
 
 ![问题5：龙头速度 1 m/s 时全队最大速度曲线](figures/q5_max_speed.png)
 
