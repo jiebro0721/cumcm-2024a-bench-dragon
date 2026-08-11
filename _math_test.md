@@ -1,15 +1,15 @@
-# math test 5
+# math test 6
 
-A：$u_i=1$ 与 $P_0$ 同在一行
+H：记为 $P_0$： $P_1$ 为龙头， $P_2$ 为龙身
 
-B：$u_i=1$ 与 $\tau_i$ 同在一行
+I：记 $u_i=\mathrm{d}s_i/\mathrm{d}t$ 为速率， $\boldsymbol{\tau}_i$ 为切向量，约束 $|P_{i+1}-P_i|=l_i$ 成立
 
-C：$u_i=\mathrm{d}s_i/\mathrm{d}t$ 与 $P_0$ 同在一行
+J：记 $u_i=\mathrm{d}s_i/\mathrm{d}t$ 为速率， $\tau_i$ 为切向量，约束 $P_{i+1}$ 成立
 
-D：$P_0$ 与 $u_i=1$ 同在一行
+K：记 $u_i$ 为速率， $\boldsymbol{\tau}_i$ 为切向量
 
-E：$a$ 与 $P_0$ 同在一行
+L：记 $a$ 为速率， $\boldsymbol{\tau}_i$ 为切向量
 
-F：$u_i$ 与 $P_0$ 同在一行
+M：记 $a$ 为速率， $\tau_i$ 为切向量，约束 $P_{i+1}$ 成立
 
-G：$u_i=1$ 与 $|P_{i+1}-P_i|=l_i$ 同在一行
+N：记 $`u_i=\mathrm{d}s_i/\mathrm{d}t`$ 为速率， $`\boldsymbol{\tau}_i`$ 为切向量，约束 $`|P_{i+1}-P_i|=l_i`$ 成立
