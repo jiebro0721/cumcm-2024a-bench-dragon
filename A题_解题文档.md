@@ -12,7 +12,7 @@
 
 $$
 l_i = \begin{cases}
-341-2\times 27.5 = 286\ \mathrm{cm}, & i=0\ \text{（龙头）},\\[2pt]
+341-2\times 27.5 = 286\ \mathrm{cm}, & i=0\ \text{（龙头）},\\
 220-2\times 27.5 = 165\ \mathrm{cm}, & i=1,2,\dots,222\ \text{（龙身、龙尾）}.
 \end{cases}
 $$
@@ -54,7 +54,7 @@ $$
 
 $$
 \rho=\frac{a}{2\pi}\theta,
-\tag{1}
+\qquad(1)
 $$
 
 故 $P_i$ 的直角坐标为
@@ -62,7 +62,7 @@ $$
 $$
 x_i=\frac{a}{2\pi}\theta_i\cos\theta_i,\qquad
 y_i=\frac{a}{2\pi}\theta_i\sin\theta_i .
-\tag{2}
+\qquad(2)
 $$
 
 龙头前把手 $P_0$ 以速度 $v_0$ 运动，其速度平方为
@@ -72,7 +72,7 @@ v_0^2=\left(\frac{\mathrm{d}x_0}{\mathrm{d}t}\right)^2+
 \left(\frac{\mathrm{d}y_0}{\mathrm{d}t}\right)^2
 =\frac{a^2}{4\pi^2}\left(1+\theta_0^2\right)
 \left(\frac{\mathrm{d}\theta_0}{\mathrm{d}t}\right)^2.
-\tag{3}
+\qquad(3)
 $$
 
 盘入时 $\theta_0$ 随时间减小，于是得到**龙头极角的常微分方程**：
@@ -80,14 +80,14 @@ $$
 $$
 \frac{\mathrm{d}\theta_0}{\mathrm{d}t}
 =-\frac{2\pi v_0}{a\sqrt{1+\theta_0^2}}.
-\tag{4}
+\qquad(4)
 $$
 
 令 $G(\theta)=\theta\sqrt{1+\theta^2}+\ln\bigl(\theta+\sqrt{1+\theta^2}\bigr)$，积分得
 
 $$
 G(\theta_0(t))=G(\theta_0(0))-\frac{4\pi v_0}{a}t.
-\tag{5}
+\qquad(5)
 $$
 
 由弧长公式亦可直接得到相同的结论：螺线上从 $\theta_2$ 到 $\theta_1$（$\theta_1>\theta_2$）的弧长为
@@ -95,14 +95,14 @@ $$
 $$
 s=\int_{\theta_2}^{\theta_1}\sqrt{\rho^2+\left(\frac{\mathrm{d}\rho}{\mathrm{d}\theta}\right)^2}\,\mathrm{d}\theta
 =\frac{a}{4\pi}\left[G(\theta)\right]_{\theta_2}^{\theta_1},
-\tag{52}
+\qquad(52)
 $$
 
 于是
 
 $$
 v_0t=\frac{a}{4\pi}\left[G(\theta_0(0))-G(\theta_0(t))\right],
-\tag{53}
+\qquad(53)
 $$
 
 与式 (5) 一致。对给定时刻 $t$，用单调函数求根即可得到 $\theta_0(t)$，再代入式 (2) 得龙头位置。
@@ -115,7 +115,7 @@ $$
 l_i^2=\rho_i^2+\rho_{i+1}^2-2\rho_i\rho_{i+1}\cos(\theta_{i+1}-\theta_i)
 =\frac{a^2}{4\pi^2}\left[\theta_i^2+\theta_{i+1}^2
 -2\theta_i\theta_{i+1}\cos(\theta_{i+1}-\theta_i)\right].
-\tag{6}
+\qquad(6)
 $$
 
 对盘入螺线，后一个把手在龙头后方（$\theta_{i+1}>\theta_i$），故在区间 $(\theta_i,\ \theta_i+2\pi)$ 内求式 (6) 的唯一根即得 $\theta_{i+1}$；依次递推可得 $P_1,\dots,P_{223}$。若区间内无解，说明板凳无法在该位置容纳，视为不可行（碰撞）。此递推即讲评第 6 节“情形 1～4”的统一弧长参数化实现：把整条路径（盘入螺线＋圆弧＋盘出螺线）参数化为弧长 $s$，后把手为沿路径向后第一个满足弦长等于 $l_i$ 的点。
@@ -135,7 +135,7 @@ $$
 u_{i+1}=\frac{(P_{i+1}-P_i)\cdot\boldsymbol{\tau}_i}
 {(P_{i+1}-P_i)\cdot\boldsymbol{\tau}_{i+1}}\,u_i,
 \qquad |\boldsymbol{v}_i|=|u_i|.
-\tag{7}
+\qquad(7)
 $$
 
 对纯螺线情形，上式与讲评式 (7)～(9) 等价：
@@ -147,7 +147,7 @@ $$
 {\theta_{i+1}-\theta_i\cos\Delta+\theta_i\theta_{i+1}\sin\Delta}
 \frac{\mathrm{d}\theta_i}{\mathrm{d}t},
 \qquad \Delta=\theta_{i+1}-\theta_i,
-\tag{8}
+\qquad(8)
 $$
 
 $$
@@ -155,7 +155,7 @@ $$
 =\left|\frac{\theta_{i+1}\cos\Delta-\theta_i+\theta_i\theta_{i+1}\sin\Delta}
 {\theta_{i+1}-\theta_i\cos\Delta+\theta_i\theta_{i+1}\sin\Delta}\right|
 \sqrt{\frac{1+\theta_{i+1}^2}{1+\theta_i^2}}\,|\boldsymbol{v}_i|.
-\tag{9}
+\qquad(9)
 $$
 
 ### 3.4 板凳矩形与碰撞判别模型
@@ -169,7 +169,7 @@ R_i&=P_i+\frac{l_i+d_i}{l_i}(P_{i+1}-P_i)-\frac{\omega_i}{l_i}\mathbf{R}(P_{i+1}
 S_i&=P_i-\frac{d_i}{l_i}(P_{i+1}-P_i)-\frac{\omega_i}{l_i}\mathbf{R}(P_{i+1}-P_i),\\
 T_i&=P_i-\frac{d_i}{l_i}(P_{i+1}-P_i)+\frac{\omega_i}{l_i}\mathbf{R}(P_{i+1}-P_i),
 \end{aligned}
-\tag{10}
+\qquad(10)
 $$
 
 其中 $\mathbf{R}(x,y)=(y,-x)$ 表示逆时针旋转 $90^\circ$，$d_i=0.275$ m，$\omega_i=0.15$ m。
@@ -179,7 +179,7 @@ $$
 $$
 t=\frac{p_j(y_C-y_A)-q_j(x_C-x_A)}{\Delta},\qquad
 s=\frac{p_i(y_C-y_A)-q_i(x_C-x_A)}{\Delta},
-\tag{11}
+\qquad(11)
 $$
 
 若 $0\le s,t\le 1$ 则两线段相交；$\Delta=0$ 时再按平行/共线情形判断（讲评式 (18)～(27)）。任意一条边相交即判定两板凳碰撞。
@@ -250,7 +250,7 @@ $$
 
 $$
 T=\frac{a}{4\pi v_0}\left[G(\theta_0(0))-G(\theta_0(T))\right].
-\tag{12}
+\qquad(12)
 $$
 
 ![问题2：碰撞窗口](figures/q2_collision_windows.png)
@@ -296,21 +296,21 @@ $$
 
 $$
 \theta_1=\frac{2\pi r}{a}.
-\tag{13}
+\qquad(13)
 $$
 
 要求龙头前把手能沿螺线从初始位置（$32\pi$）盘入到 $\theta_1$，**整个过程中**任意两条不相邻板凳均不碰撞，即
 
 $$
 \text{碰撞}(\theta_0)=0,\qquad \forall\,\theta_0\in[\theta_1,\ 32\pi].
-\tag{14}
+\qquad(14)
 $$
 
 螺距越小，相邻圈之间越挤、越易碰撞，故**最小螺距问题**为
 
 $$
 a_{\min}=\min\bigl\{a>0:\ \text{式 (14) 成立}\bigr\}.
-\tag{15}
+\qquad(15)
 $$
 
 求解采用二分法：对候选 $a$，从 $\theta_0=32\pi$ 向 $\theta_1$ 扫描（外层步长 0.5 rad，$\theta_1$ 附近加密到 0.02 rad），任一配置发生碰撞即不可行。数值实验表明，临界螺距附近的碰撞窗口很窄（约 0.1 rad），因此必须在 $\theta_1$ 附近精细扫描。
@@ -319,9 +319,7 @@ $$
 
 ### 6.2 结果
 
-$$
-\boxed{\,a_{\min}=0.45033645\ \mathrm{m}\approx 45.0\ \mathrm{cm}\,}
-$$
+**结果：** $a_{\min}=0.45033645\ \mathrm{m}\approx 45.0\ \mathrm{cm}$
 
 对应
 
@@ -341,14 +339,14 @@ $$
 
 $$
 \rho=\frac{a}{2\pi}(\theta+\pi).
-\tag{16}
+\qquad(16)
 $$
 
 盘入螺线与调头空间（半径 $r=4.5$ m）交于点 $P_1$，其极角为
 
 $$
 \theta_1=\frac{2\pi r}{a},
-\tag{17}
+\qquad(17)
 $$
 
 该点处的单位法向量为
@@ -356,7 +354,7 @@ $$
 $$
 \boldsymbol{n}_1=\frac{1}{\sqrt{1+\theta_1^2}}
 \bigl(-(\sin\theta_1+\theta_1\cos\theta_1),\ \cos\theta_1-\theta_1\sin\theta_1\bigr).
-\tag{18}
+\qquad(18)
 $$
 
 记两段圆弧圆心为 $O_1(u_1,v_1)$、$O_2(u_2,v_2)$，半径 $r_1,r_2$，则（讲评式 (32)～(33)）
@@ -366,14 +364,14 @@ $$
 O_1&=P_1-r_1\boldsymbol{n}_1,\\
 O_2&=-P_1+r_2\boldsymbol{n}_1 .
 \end{aligned}
-\tag{19}
+\qquad(19)
 $$
 
 两段圆弧相切（$|O_1O_2|=r_1+r_2$），从而
 
 $$
 r_1+r_2=\frac{r\sqrt{1+\theta_1^2}}{\theta_1}.
-\tag{20}
+\qquad(20)
 $$
 
 当第 1 段圆弧半径是第 2 段的 $k$ 倍（$r_1=kr_2$）时，
@@ -381,19 +379,19 @@ $$
 $$
 r_1=\frac{kr\sqrt{1+\theta_1^2}}{\theta_1(k+1)},\qquad
 r_2=\frac{r\sqrt{1+\theta_1^2}}{\theta_1(k+1)}.
-\tag{21}
+\qquad(21)
 $$
 
 设两圆弧切点为 $B$。由 $O_1P_1\parallel O_2P_2$，$\angle P_1O_1B=\angle P_2O_2B\triangleq\alpha$，调头曲线总长为
 
 $$
 L=(r_1+r_2)\alpha=\frac{r\alpha\sqrt{1+\theta_1^2}}{\theta_1}.
-\tag{22}
+\qquad(22)
 $$
 
 **调头曲线能否缩短？——不能。** 理由如下：
 
-1. 由式 (20)，$r_1+r_2$ 只由 $r$、$a$ 决定，**与 $k$ 无关**；
+1. 由式 (20)，$r_1+r_2$ 只由 $r$、$a$ 决定，与 $k$ 无关；
 2. 对任意半径比 $k$，两段圆弧的圆心 $O_1',O_2'$ 与切点 $B'$ 满足 $O_1O_1'=O_2O_2'$，四边形 $O_1O_1'O_2'O_2$ 为平行四边形，故 $\angle P_1O_1B=\angle P_1O_1'B'$、$\angle P_2O_2B=\angle P_2O_2'B'$，即两圆弧所张圆心角之和 $\alpha$ **也与 $k$ 无关**；
 3. 因此 $L=(r_1+r_2)\alpha$ 与 $k$ 无关，**保持相切的前提下无法通过调整两段圆弧的半径比使调头曲线变短**。
 
@@ -426,7 +424,7 @@ $$
 \frac{\mathrm{d}\theta_0}{\mathrm{d}t}=\frac{2\pi v_0}{a\sqrt{1+\theta_0^2}},
 \qquad
 G(\theta_0(t))=\frac{4\pi v_0}{a}t+G(\theta_0(0)).
-\tag{23}
+\qquad(23)
 $$
 
 以调头开始时刻为 $t=0$：$t<0$ 龙头在盘入螺线上，$0\le t<L_1=r_1\alpha$ 在第 1 段圆弧上，$L_1\le t<L$ 在第 2 段圆弧上，$t\ge L$ 在盘出螺线上。龙身/龙尾各把手沿路径向后按“弦长递推”确定（等价于讲评式 (40)～(49) 的四种情形），速度按 3.3 节统一递推。
@@ -478,14 +476,14 @@ $$
 
 $$
 \frac{v_{\max}}{1}=\frac{2}{v_{\max}^{0}},
-\tag{24}
+\qquad(24)
 $$
 
 即
 
 $$
 v_{\max}=\frac{2}{v_{\max}^{0}}.
-\tag{25}
+\qquad(25)
 $$
 
 ### 8.2 求解算法
@@ -505,9 +503,7 @@ $$
 
 出现在 $t=14.48$ s（龙头刚离开调头曲线进入盘出螺线时），最大速度把手为**第 3 节龙身前把手**（位于第 1 段圆弧与第 2 段圆弧衔接处附近）。因此
 
-$$
-\boxed{\,v_{\max}=\frac{2}{1.60479338}=1.24626636\ \mathrm{m/s}\,}
-$$
+**结果：** $v_{\max}=\frac{2}{1.60479338}=1.24626636\ \mathrm{m/s}$
 
 即龙头前把手速度最大可取约 **1.2463 m/s**，此时第 3 节龙身前把手速度恰为 2 m/s。
 
