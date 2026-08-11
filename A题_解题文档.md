@@ -308,7 +308,7 @@ $$
 螺距越小，相邻圈之间越挤、越易碰撞，故**最小螺距问题**为
 
 $$
-a_{\min}=\min\bigl\{a>0:\ \text{式 (14) 成立}\bigr\}.
+a_{\min}=\min\bigl\lbrace a>0:\ \text{式 (14) 成立}\bigr\rbrace.
 \qquad(15)
 $$
 
