@@ -1,27 +1,18 @@
-# math test 2
+# math test 3
 
-bt CJK before: ，$`P_0`$ 为
+close before CJK letter: $P_0$为
 
-bt CJK after: $`P_0`$：为
+open after CJK paren: （$P_0$）
 
-bt CJK both: （$`r=4.5`$ m）
+space after CJK paren: （ $P_0$）
 
-dollar with spaces: ， $P_0$ 为
+space both with CJK letters: 中文 $P_0$ 中文
 
-dollar CJK after: $P_0$：为
-
-display no standalone equal:
+aligned block:
 
 $$
-\frac{\mathrm{d}\theta_{i+1}}{\mathrm{d}t}
-=\frac{\theta_{i+1}\cos\Delta-\theta_i}{\theta_{i+1}-\theta_i\cos\Delta}
-\qquad(8)
+\begin{aligned}
+x&=a+b,\\
+y&=c+d.
+\end{aligned}
 $$
-
-fenced math:
-
-```math
-\frac{\mathrm{d}\theta_{i+1}}{\mathrm{d}t}
-=
-\frac{\theta_{i+1}\cos\Delta-\theta_i}{\theta_{i+1}-\theta_i\cos\Delta}
-```
