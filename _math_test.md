@@ -1,24 +1,27 @@
-# math test
+# math test 2
 
-inline underscore: $P_0$ and $P_{i+1}$ and $l_i=|P_{i+1}-P_i|$
+bt CJK before: ，$`P_0`$ 为
 
-backtick inline: $`P_0`$ and $`P_{i+1}`$ and $`l_i=|P_{i+1}-P_i|`$
+bt CJK after: $`P_0`$：为
 
-bigl inline: $a_{\min}=\min\bigl\{a>0\bigr\}$
+bt CJK both: （$`r=4.5`$ m）
 
-bigl backtick: $`a_{\min}=\min\bigl\{a>0\bigr\}`$
+dollar with spaces: ， $P_0$ 为
 
-display:
+dollar CJK after: $P_0$：为
+
+display no standalone equal:
 
 $$
 \frac{\mathrm{d}\theta_{i+1}}{\mathrm{d}t}
-=
-\frac{\theta_{i+1}\cos\Delta-\theta_i}{\theta_{i+1}-\theta_i\cos\Delta}
+=\frac{\theta_{i+1}\cos\Delta-\theta_i}{\theta_{i+1}-\theta_i\cos\Delta}
 \qquad(8)
 $$
 
-display underscore single line: $$P_{i+1}$$
+fenced math:
 
-bold math: **与 $k$ 无关**
-
-adjacent CJK: （$r=4.5$ m），$P_1\sim P_{221}$ 为
+```math
+\frac{\mathrm{d}\theta_{i+1}}{\mathrm{d}t}
+=
+\frac{\theta_{i+1}\cos\Delta-\theta_i}{\theta_{i+1}-\theta_i\cos\Delta}
+```
